@@ -1,0 +1,20 @@
+  private void button2_Click(object sender, EventArgs e)
+  {
+      double x, y; 
+      bool isXValid = double.TryParse(textBox3.Text, out x);     
+      bool isYValid = double.TryParse(textBox2.Text, out y);
+
+      if (isXValid && isYValid)
+      {             
+          double sinX = Math.Sin(x);
+          double cosY = Math.Cos(y);         
+          double result = (3 * sinX + 6 * cosY) / 2;               
+          label6.Text = result.ToString();
+      }
+      else
+      {
+          // Если ввод некорректен (не числа), показываем сообщение об ошибке
+          Console.WriteLine("Работу Выполнил Брагин Артём");
+          MessageBox.Show("Пожалуйста, введите корректные числовые значения для x и y.", "Ошибка ввода", MessageBoxButtons.OK, MessageBoxIcon.Error);
+      }
+  }
